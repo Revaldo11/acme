@@ -28,12 +28,12 @@ class m220302_094940_create_table_place extends Migration
     public function up()
     {
         $this->createTable('place', [
-            'id' => $this->primaryKey()->unsigned(),
+            'id' => $this->primaryKey()->unsigned()->notNull(),
             'place_id' => $this->string(50)->notNull(),
             'lat' => $this->string(50)->notNull(),
             'lng' => $this->string(50)->notNull(),
             'country_code' => $this->string(50)->notNull(),
-            'is_country' => $this->tinyInteger(50)->notNull(),
+            'is_country' => $this->boolean()->notNull(),
         ]);
     }
 
